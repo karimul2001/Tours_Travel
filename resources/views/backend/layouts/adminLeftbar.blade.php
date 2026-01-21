@@ -57,19 +57,19 @@
                                 <li class="sidebar-item">
                                     <a href="inbox-email.html" class="sidebar-link">
                                         <i class="mdi mdi-email"></i>
-                                        <span class="hide-menu"> Email </span>
+                                        <span class="hide-menu"> All Packages </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a href="inbox-email-detail.html" class="sidebar-link">
                                         <i class="mdi mdi-email-alert"></i>
-                                        <span class="hide-menu"> Email Detail </span>
+                                        <span class="hide-menu"> Add Packages </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="inbox-email-compose.html" class="sidebar-link">
+                                    <a href="{{route('tour_category.index')}}" class="sidebar-link">
                                         <i class="mdi mdi-email-secure"></i>
-                                        <span class="hide-menu"> Email Compose </span>
+                                        <span class="hide-menu"> Tour Category </span>
                                     </a>
                                 </li>
                             </ul>

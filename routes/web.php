@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TourCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,7 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::post('logout', [App\Http\Controllers\Auth\Admin\LoginController::class, 'destroy'])->name('admin.logout');
 
     Route::view('/dashboard', 'backend.admin_dashboard');
+    Route::resource('tour_category', TourCategoryController::class);
 });
 
 require __DIR__ . '/auth.php';
