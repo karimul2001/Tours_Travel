@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\TourCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
+
 
 class TourCategoryController extends Controller
 {
@@ -29,7 +32,24 @@ class TourCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'tour_category' => 'required|min:3|max:30|unique:tour_categories,name',
+            ],
+            [
+                'tour_category.required' => 'Tour category must be entered',
+                'tour_category.min'      => 'Tour category name minimum 3 letters',
+                'tour_category.max'      => 'Tour category name maximum 30 letters',
+                'tour_category.unique'   => 'This tour category already exists',
+            ]
+        );
+
+        $tour_category = [
+            'name' => $request->tour_category,
+            'slug' => Str::slug($request->tour_category),
+        ];
+        TourCategory::create($tour_category);
+        return redirect()->route('tour_category.index')->with('success', 'Tour Category Added');
     }
 
     /**
@@ -45,7 +65,7 @@ class TourCategoryController extends Controller
      */
     public function edit(TourCategory $tourCategory)
     {
-        //
+        return view('backend.tour_category.edit', compact('tourCategory'));
     }
 
     /**
@@ -61,6 +81,7 @@ class TourCategoryController extends Controller
      */
     public function destroy(TourCategory $tourCategory)
     {
-        //
+        $tourCategory->delete();
+        return redirect()->route('tour_category.index')->with("success", "Delete Successfully");
     }
 }
