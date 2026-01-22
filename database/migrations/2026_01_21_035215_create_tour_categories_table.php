@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tour_categories', function (Blueprint $table) {
-            $table->smallIncrements('id');
+            $table->smallIncrements('id');  //lenth 5 disit
             $table->string('name', 100);
             $table->string('slug', 150)->unique();
             $table->boolean('status')->default(1); // 1 = Active, 0 = Inactive

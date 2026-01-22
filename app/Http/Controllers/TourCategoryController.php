@@ -34,12 +34,12 @@ class TourCategoryController extends Controller
     {
         $request->validate(
             [
-                'tour_category' => 'required|min:3|max:30|unique:tour_categories,name',
+                'tour_category' => 'required|min:3|max:50|unique:tour_categories,name',
             ],
             [
                 'tour_category.required' => 'Tour category must be entered',
                 'tour_category.min'      => 'Tour category name minimum 3 letters',
-                'tour_category.max'      => 'Tour category name maximum 30 letters',
+                'tour_category.max'      => 'Tour category name maximum 50 letters',
                 'tour_category.unique'   => 'This tour category already exists',
             ]
         );
@@ -65,6 +65,7 @@ class TourCategoryController extends Controller
      */
     public function edit(TourCategory $tourCategory)
     {
+        //dd($tourCategory);
         return view('backend.tour_category.edit', compact('tourCategory'));
     }
 
@@ -72,9 +73,30 @@ class TourCategoryController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, TourCategory $tourCategory)
-    {
-        //
-    }
+{
+    $request->validate(
+        [
+            'tour_category' => 'required|min:3|max:50|unique:tour_categories,name,' . $tourCategory->id,
+        ],
+        [
+            'tour_category.required' => 'Tour category must be entered',
+            'tour_category.min'      => 'Tour category name minimum 3 letters',
+            'tour_category.max'      => 'Tour category name maximum 50 letters',
+            'tour_category.unique'   => 'This tour category already exists',
+        ]
+    );
+
+    $data = [
+        'name' => $request->tour_category,
+        'slug' => Str::slug($request->tour_category),
+    ];
+
+    $tourCategory->update($data);
+
+    return redirect()
+        ->route('tour_category.index')
+        ->with('success', 'Tour Category Updated successfully');
+}
 
     /**
      * Remove the specified resource from storage.

@@ -70,7 +70,7 @@
                             @if (session('success'))
                                 <div id="success-alert"
                                     class="alert text-white text-center position-fixed top-50 start-50 translate-middle fs-3 fw-bold"
-                                    style="background-color: #107721; z-index: 1050; min-width: 1000px; margin-left:150px;"
+                                    style="background-color: #107721; z-index: 1050; min-width: 900px; margin-left:150px;"
                                     role="alert">
                                     {{ session('success') }}
                                 </div>
@@ -118,14 +118,14 @@
                                                 <th scope="row" class="text-center">{{ $tour->id }}</th>
                                                 <td class="text-center">{{ $tour->name }}</td>
                                                 <td class="text-center">{{ $tour->slug }}</td>
-                                                <td class="text-center">
-                                                    @if ($tour->status)
+                                                <td class="text-center">{{$tour->status ? 'Active' : 'Inactive'}}
+                                                    {{-- @if ($tour->status)
                                                         <span
                                                             class="bg-green-500 text-white px-2 py-1 rounded text-sm">Active</span>
                                                     @else
                                                         <span
                                                             class="bg-red-500 text-white px-2 py-1 rounded text-sm">Inactive</span>
-                                                    @endif
+                                                    @endif --}}
                                                 </td>
                                                 <td class="text-center">{{ $tour->created_at }}</td>
                                                 <td class="text-center">
