@@ -21,9 +21,9 @@
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-                    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-                    <![endif]-->
+                                                        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                                                        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+                                                        <![endif]-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     </head>
@@ -70,7 +70,7 @@
                             @if (session('success'))
                                 <div id="success-alert"
                                     class="alert text-white text-center position-fixed top-50 start-50 translate-middle fs-3 fw-bold"
-                                    style="background-color: #107721; z-index: 1050; min-width: 900px; margin-left:150px;"
+                                    style="background-color: #107721; z-index: 1050; min-width: 900px; margin-left:80px;"
                                     role="alert">
                                     {{ session('success') }}
                                 </div>
@@ -89,7 +89,8 @@
                         </div>
 
                         <div class="flex justify-end mb-4">
-                            <a href="{{ route('tour_category.create') }}" class="btn btn-primary">
+                            <a href="{{ route('tour_category.create') }}"
+                                class="btn btn-info btn-rounded m-t-10 mb-2 float-right">
                                 <i class="bi bi-plus-lg"></i> Add Category
                             </a>
                         </div>
@@ -118,7 +119,11 @@
                                                 <th scope="row" class="text-center">{{ $tour->id }}</th>
                                                 <td class="text-center">{{ $tour->name }}</td>
                                                 <td class="text-center">{{ $tour->slug }}</td>
-                                                <td class="text-center">{{$tour->status ? 'Active' : 'Inactive'}}
+                                                <td class="text-center">
+                                                    <button type="button"
+                                                        class="btn btn-sm {{ $tour->status ? 'btn-success' : 'btn-danger' }}">
+                                                        {{ $tour->status ? 'Active' : 'Inactive' }}
+                                                    </button>
                                                     {{-- @if ($tour->status)
                                                         <span
                                                             class="bg-green-500 text-white px-2 py-1 rounded text-sm">Active</span>
@@ -126,7 +131,6 @@
                                                         <span
                                                             class="bg-red-500 text-white px-2 py-1 rounded text-sm">Inactive</span>
                                                     @endif --}}
-                                                </td>
                                                 <td class="text-center">{{ $tour->created_at }}</td>
                                                 <td class="text-center">
                                                     <a href="{{ route('tour_category.edit', $tour->id) }}"

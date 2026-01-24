@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TourCategoryController;
+use App\Http\Controllers\TourPackageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +47,7 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
 
     Route::view('/dashboard', 'backend.admin_dashboard');
     Route::resource('tour_category', TourCategoryController::class);
+    Route::resource('tour_package', TourPackageController::class);
 });
 
 require __DIR__ . '/auth.php';
