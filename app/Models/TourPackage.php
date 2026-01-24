@@ -24,4 +24,9 @@ class TourPackage extends Model
     protected $casts = [
         'status' => 'boolean',
     ];
+
+    public function tourCategory()
+{
+    return $this->belongsTo(TourCategory::class);
+}
 }

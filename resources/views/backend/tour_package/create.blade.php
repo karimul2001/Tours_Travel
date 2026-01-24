@@ -61,6 +61,17 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Add Tour Package</h4>
+                    @if ($errors->any())
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="alert alert-danger text-center">
+                                @foreach ($errors->all() as $error)
+                                    <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                @endif
                     <form class="m-t-40" method="POST" action="{{ route('tour_package.store') }}"
                         enctype="multipart/form-data">
                         @csrf

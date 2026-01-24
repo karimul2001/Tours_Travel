@@ -124,6 +124,7 @@
                                                         class="btn btn-sm {{ $tour->status ? 'btn-success' : 'btn-danger' }}">
                                                         {{ $tour->status ? 'Active' : 'Inactive' }}
                                                     </button>
+                                                </td>
                                                     {{-- @if ($tour->status)
                                                         <span
                                                             class="bg-green-500 text-white px-2 py-1 rounded text-sm">Active</span>

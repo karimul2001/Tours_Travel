@@ -19,4 +19,9 @@ class TourCategory extends Model
     protected $casts = [
         'status' => 'boolean',
     ];
+
+    public function tourPackages()
+{
+    return $this->hasMany(TourPackage::class);
+}
 }

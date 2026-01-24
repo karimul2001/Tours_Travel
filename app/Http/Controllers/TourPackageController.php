@@ -14,8 +14,11 @@ class TourPackageController extends Controller
      */
     public function index()
     {
-        $datas = TourPackage::all();
+        $datas = TourPackage::with('tourcategory')->get();
         return view('backend.tour_package.index', compact('datas'));
+
+        // $packages = TourPackage::with('tourCategory')->get();
+        // return view('backend.tour_package.index', compact('packages'));
     }
 
     /**
@@ -99,7 +102,7 @@ class TourPackageController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**
@@ -113,8 +116,9 @@ class TourPackageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(TourPackage $tourPackage)
     {
-        //
+        $tourPackage->delete();
+        return redirect()->route('tour_package.index')->with('success', "Successfully Delete");
     }
 }

@@ -18,12 +18,7 @@
         <link href="{{ url('') }}/assets/libs/morris.js/morris.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="{{ url('') }}/dist/css/style.min.css" rel="stylesheet">
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-                                                                                            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                                                                                            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-                                                                                        <![endif]-->
+        
     </head>
 @endsection
 
@@ -69,6 +64,12 @@
                                 </div>
                             @endif
                         </div>
+                        <div class="flex justify-end mb-4">
+                            <a href="{{ route('tour_package.create') }}"
+                                class="btn btn-info btn-rounded m-t-10 mb-2 float-right">
+                                <i class="bi bi-plus-lg"></i> Add Category
+                            </a>
+                        </div>
 
                         <div class="table-responsive">
                             <table id="demo-foo-addrow" class="table table-bordered m-t-30 table-hover contact-list"
@@ -93,8 +94,11 @@
                                 <tbody>
                                     @foreach ($datas as $data)
                                         <tr>
-                                            <th scope="row">{{ $data->id }}</th>
-                                            <td>{{ $data->tour_category_id }}</td>
+                                            <form action="{{route('tour_package.destroy', $data->id)}}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <th scope="row">{{ $data->id }}</th>
+                                            <td>{{ $data->tourcategory->name }}</td>
                                             <td>{{ $data->title }}</td>
                                             <td>{{ $data->slug }}</td>
                                             <td>{{ $data->price }}</td>
@@ -104,9 +108,14 @@
 
                                             <td>
                                                 <img src="{{ asset($data->image ?? 'package_photo/nophoto.jpg') }}"
-                                                    width="80" alt="No Image">
+                                                    width="100" alt="No Image">
                                             </td>
-                                            <td>{{ $data->status }}</td>
+                                            <td>
+                                                <button type="button"
+                                                    class="btn btn-sm {{ $data->status ? 'btn-success' : 'btn-danger' }}">
+                                                    {{ $data->status ? 'Active' : 'Inactive' }}
+                                                </button>
+                                            </td>
                                             <td>{{ $data->created_at }}</td>
                                             <td class="text-center">
                                                 <a href="" class="btn btn-info">
@@ -117,6 +126,7 @@
                                                     Delete
                                                 </button>
                                             </td>
+                                            </form>
                                         </tr>
                                     @endforeach
                                 </tbody>
