@@ -38,6 +38,8 @@ class TourPackageController extends Controller
         //$request validation
         $request->validate(
             [
+                'tour_category' => 'required|exists:tour_categories,id',
+
                 'title' => 'required|min:5|max:100',
                 'price' => 'required',
                 'duration' => 'required',
@@ -86,7 +88,7 @@ class TourPackageController extends Controller
 
         ];
         TourPackage::create($data);
-        return redirect()->route('tour_package.index')->with('success', 'Successfully Added');
+        return redirect()->route('tour_package.index')->with('success', 'Successfully Added');;
     }
 
     /**
@@ -100,17 +102,70 @@ class TourPackageController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(TourPackage $tourPackage)
     {
-        
+        $datas = TourCategory::all();
+        return view('backend.tour_package.edit', compact('tourPackage', 'datas'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, TourPackage $tourPackage)
     {
-        //
+        $request->validate(
+            [
+                'tour_category' => 'required|exists:tour_categories,id',
+
+                'title' => 'required|min:5|max:100',
+                'price' => 'required',
+                'duration' => 'required',
+                'location' => 'required',
+                'description' => 'required',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            ],
+            [
+                'title.required' => 'Title must be entered.',
+                'title.min' => 'Title must be at least 5 characters.',
+                'title.max' => 'Title may not be greater than 100 characters.',
+
+                'price.required' => 'Price must be entered.',
+                'duration.required' => 'Duration must be entered.',
+                'location.required' => 'Location must be entered.',
+                'description.required' => 'Description must be entered.',
+
+                'image.image' => 'The file must be an image.',
+                'image.mimes' => 'Image must be a file of type: jpeg, png, jpg.',
+                'image.max' => 'Image size must not exceed 2MB.',
+            ]
+        );
+
+        $data = [
+            'tour_category_id' => $request->tour_category,
+            'title'            => $request->title,
+            'slug' => Str::slug($request->title),
+            'price'            => $request->price,
+            'duration'         => $request->duration,
+            'location'         => $request->location,
+            'description'      => $request->description,
+            'status' => $request->status,
+        ];
+
+        if ($request->hasFile('image')) {
+
+            if ($tourPackage->image && file_exists(public_path($tourPackage->image))) {
+                unlink(public_path($tourPackage->image));
+            }
+
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('package_photo'), $imageName);
+
+            $data['image'] = 'package_photo/' . $imageName;
+        }
+
+        $tourPackage->update($data);
+        return redirect()->route('tour_package.index')->with('success', 'Successfully Updated');
     }
 
     /**
@@ -118,7 +173,12 @@ class TourPackageController extends Controller
      */
     public function destroy(TourPackage $tourPackage)
     {
+        if ($tourPackage->image && file_exists(public_path($tourPackage->image))) {
+            unlink(public_path($tourPackage->image));
+        }
+
         $tourPackage->delete();
-        return redirect()->route('tour_package.index')->with('success', "Successfully Delete");
+        return redirect()->route('tour_package.index')
+            ->with('success', 'Successfully Deleted');
     }
 }

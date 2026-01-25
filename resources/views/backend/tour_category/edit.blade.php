@@ -4,16 +4,16 @@
 
     <head>
         <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{url('')}}/assets/images/favicon.png">
-    <title>AdminBite admin Template - The Ultimate Multipurpose admin template</title>
-    <!-- Custom CSS -->
-    <link href="{{url('')}}/dist/css/style.min.css" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url('') }}/assets/images/favicon.png">
+        <title>AdminBite admin Template - The Ultimate Multipurpose admin template</title>
+        <!-- Custom CSS -->
+        <link href="{{ url('') }}/dist/css/style.min.css" rel="stylesheet">
     </head>
 @endsection
 
@@ -81,6 +81,19 @@
                                 <input type="text" name="slug"
                                     value="{{ !old('slug') ? $tourCategory->slug : old('slug') }}" class="form-control">
                             </div>
+                            <div class="form-group">
+                                <label>Status:</label>
+                                <select name="status" class="form-control">
+                                    <option value="1"
+                                        {{ old('status', $tourCategory->status) == 1 ? 'selected' : '' }}>
+                                        Active
+                                    </option>
+                                    <option value="0"
+                                        {{ old('status', $tourCategory->status) == 0 ? 'selected' : '' }}>
+                                        Inactive
+                                    </option>
+                                </select>
+                            </div>
 
 
                             <button type="submit" class="btn btn-info">UPDATE</button>
@@ -99,21 +112,21 @@
 @endsection
 
 @section('scripts')
-    <script src="{{url('')}}/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="{{ url('') }}/assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{url('')}}/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="{{url('')}}/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ url('') }}/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="{{ url('') }}/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- apps -->
-    <script src="{{url('')}}/dist/js/app.min.js"></script>
-    <script src="{{url('')}}/dist/js/app.init.dark.js"></script>
-    <script src="{{url('')}}/dist/js/app-style-switcher.js"></script>
+    <script src="{{ url('') }}/dist/js/app.min.js"></script>
+    <script src="{{ url('') }}/dist/js/app.init.dark.js"></script>
+    <script src="{{ url('') }}/dist/js/app-style-switcher.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="{{url('')}}/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="{{url('')}}/assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="{{ url('') }}/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="{{ url('') }}/assets/extra-libs/sparkline/sparkline.js"></script>
     <!--Wave Effects -->
-    <script src="{{url('')}}/dist/js/waves.js"></script>
+    <script src="{{ url('') }}/dist/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="{{url('')}}/dist/js/sidebarmenu.js"></script>
+    <script src="{{ url('') }}/dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="{{url('')}}/dist/js/custom.min.js"></script>
+    <script src="{{ url('') }}/dist/js/custom.min.js"></script>
 @endsection

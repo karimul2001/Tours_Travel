@@ -18,7 +18,7 @@
         <link href="{{ url('') }}/assets/libs/morris.js/morris.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="{{ url('') }}/dist/css/style.min.css" rel="stylesheet">
-        
+
     </head>
 @endsection
 
@@ -67,7 +67,7 @@
                         <div class="flex justify-end mb-4">
                             <a href="{{ route('tour_package.create') }}"
                                 class="btn btn-info btn-rounded m-t-10 mb-2 float-right">
-                                <i class="bi bi-plus-lg"></i> Add Category
+                                <i class="bi bi-plus-lg"></i> Add Package
                             </a>
                         </div>
 
@@ -94,38 +94,39 @@
                                 <tbody>
                                     @foreach ($datas as $data)
                                         <tr>
-                                            <form action="{{route('tour_package.destroy', $data->id)}}" method="post">
+                                            <form action="{{ route('tour_package.destroy', $data->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <th scope="row">{{ $data->id }}</th>
-                                            <td>{{ $data->tourcategory->name }}</td>
-                                            <td>{{ $data->title }}</td>
-                                            <td>{{ $data->slug }}</td>
-                                            <td>{{ $data->price }}</td>
-                                            <td>{{ $data->duration }}</td>
-                                            <td>{{ $data->location }}</td>
-                                            <td>{{ $data->description }}</td>
+                                                <td>{{ $data->tourcategory->name }}</td>
+                                                <td>{{ $data->title }}</td>
+                                                <td>{{ $data->slug }}</td>
+                                                <td>{{ $data->price }}</td>
+                                                <td>{{ $data->duration }}</td>
+                                                <td>{{ $data->location }}</td>
+                                                <td>{{ $data->description }}</td>
 
-                                            <td>
-                                                <img src="{{ asset($data->image ?? 'package_photo/nophoto.jpg') }}"
-                                                    width="100" alt="No Image">
-                                            </td>
-                                            <td>
-                                                <button type="button"
-                                                    class="btn btn-sm {{ $data->status ? 'btn-success' : 'btn-danger' }}">
-                                                    {{ $data->status ? 'Active' : 'Inactive' }}
-                                                </button>
-                                            </td>
-                                            <td>{{ $data->created_at }}</td>
-                                            <td class="text-center">
-                                                <a href="" class="btn btn-info">
-                                                    Edit
-                                                </a>
+                                                <td>
+                                                    <img src="{{ asset($data->image ?? 'package_photo/nophoto.jpg') }}"
+                                                        width="100" alt="No Image">
+                                                </td>
+                                                <td>
+                                                    <button type="button"
+                                                        class="btn btn-sm {{ $data->status ? 'btn-success' : 'btn-danger' }}">
+                                                        {{ $data->status ? 'Active' : 'Inactive' }}
+                                                    </button>
+                                                </td>
+                                                <td>{{ $data->created_at }}</td>
+                                                <td class="text-center">
+                                                    <a href="{{ route('tour_package.edit', $data->id) }}"
+                                                        class="btn btn-info">
+                                                        Edit
+                                                    </a>
 
-                                                <button type="submit" class="btn btn-danger">
-                                                    Delete
-                                                </button>
-                                            </td>
+                                                    <button type="submit" class="btn btn-danger">
+                                                        Delete
+                                                    </button>
+                                                </td>
                                             </form>
                                         </tr>
                                     @endforeach

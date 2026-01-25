@@ -73,30 +73,31 @@ class TourCategoryController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, TourCategory $tourCategory)
-{
-    $request->validate(
-        [
-            'tour_category' => 'required|min:3|max:50|unique:tour_categories,name,' . $tourCategory->id,
-        ],
-        [
-            'tour_category.required' => 'Tour category must be entered',
-            'tour_category.min'      => 'Tour category name minimum 3 letters',
-            'tour_category.max'      => 'Tour category name maximum 50 letters',
-            'tour_category.unique'   => 'This tour category already exists',
-        ]
-    );
+    {
+        $request->validate(
+            [
+                'tour_category' => 'required|min:3|max:50|unique:tour_categories,name,' . $tourCategory->id,
+            ],
+            [
+                'tour_category.required' => 'Tour category must be entered',
+                'tour_category.min'      => 'Tour category name minimum 3 letters',
+                'tour_category.max'      => 'Tour category name maximum 50 letters',
+                'tour_category.unique'   => 'This tour category already exists',
+            ]
+        );
 
-    $data = [
-        'name' => $request->tour_category,
-        'slug' => Str::slug($request->tour_category),
-    ];
+        $data = [
+            'name' => $request->tour_category,
+            'slug' => Str::slug($request->tour_category),
+            'status' => $request->status,
+        ];
 
-    $tourCategory->update($data);
+        $tourCategory->update($data);
 
-    return redirect()
-        ->route('tour_category.index')
-        ->with('success', 'Tour Category Updated successfully');
-}
+        return redirect()
+            ->route('tour_category.index')
+            ->with('success', 'Tour Category Updated successfully');
+    }
 
     /**
      * Remove the specified resource from storage.

@@ -10,20 +10,11 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- Favicon icon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url('') }}/assets/images/favicon.png">
         <title>AdminBite admin Template - The Ultimate Multipurpose admin template</title>
         <!-- Custom CSS -->
-        <link href="../../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-        <link href="../../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-        <link href="../../assets/libs/morris.js/morris.css" rel="stylesheet">
-        <!-- Custom CSS -->
-        <link href="../../dist/css/style.min.css" rel="stylesheet">
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-                                                                                                                                                                                        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                                                                                                                                                                                        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-                                                                                                                                                                                    <![endif]-->
+        <link href="{{ url('') }}/dist/css/style.min.css" rel="stylesheet">
+
     </head>
 @endsection
 
@@ -62,74 +53,96 @@
                 <div class="card-body">
                     <h4 class="card-title">Add Tour Package</h4>
                     @if ($errors->any())
-                    <div class="row justify-content-center">
-                        <div class="col-md-6">
-                            <div class="alert alert-danger text-center">
-                                @foreach ($errors->all() as $error)
-                                    <div>{{ $error }}</div>
-                                @endforeach
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="alert alert-danger text-center">
+                                    @foreach ($errors->all() as $error)
+                                        <div>{{ $error }}</div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endif
-                    <form class="m-t-40" method="POST" action="{{ route('tour_package.update') }}"
+                    @endif
+                    <form class="m-t-40" method="POST" action="{{ route('tour_package.update', $tourPackage) }}"
                         enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="form-group">
-                            <label for="">Tour Category :</label>
-                            <select name="tour_category" id="" class="form-control">
+                            <label>Tour Category :</label>
+                            <select name="tour_category" class="form-control">
                                 <option value="">Select One</option>
                                 @foreach ($datas as $data)
-                                    <option value="{{ $data->id }}">{{ $data->name }}</option>
+                                    <option value="{{ $data->id }}"
+                                        {{ old('tour_category', $tourPackage->tour_category_id) == $data->id ? 'selected' : '' }}>
+                                        {{ $data->name }}
+                                    </option>
                                 @endforeach
                             </select>
-
                         </div>
                         <div class="form-group">
                             <label for="">Title :</label>
                             <div class="controls">
-                                <input type="text" name="title" value="{{ old('title') }}" class="form-control">
+                                <input type="text" name="title"
+                                    value="{{ !old('title') ? $tourPackage->title : old('title') }}" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="">Slug :</label>
                             <div class="controls">
-                                <input type="text" name="slug" value="{{ old('slug') }}" class="form-control">
+                                <input type="text" name="slug"
+                                    value="{{ !old('slug') ? $tourPackage->slug : old('slug') }}" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="">Price :</label>
                             <div class="controls">
-                                <input type="number" name="price" value="{{ old('price') }}" class="form-control">
+                                <input type="number" name="price"
+                                    value="{{ !old('price') ? $tourPackage->price : old('price') }}" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="">Duration :</label>
                             <div class="controls">
-                                <input type="text" name="duration" value="{{ old('duration') }}" class="form-control">
+                                <input type="text" name="duration"
+                                    value="{{ !old('duration') ? $tourPackage->duration : old('duration') }}"
+                                    class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="">Location :</label>
                             <div class="controls">
-                                <input type="text" name="location" value="{{ old('location') }}" class="form-control">
+                                <input type="text" name="location"
+                                    value="{{ !old('location') ? $tourPackage->location : old('location') }}"
+                                    class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="">Description :</label>
-                            <div class="controls">
-                                <textarea type="text" name="description" value="{{ old('description') }}" class="form-control" cols="30"
-                                    rows="3"></textarea>
-                            </div>
+                            <label>Description :</label>
+                            <textarea name="description" class="form-control" cols="30" rows="3">
+                                {{ old('description', $tourPackage->description) }}
+                            </textarea>
                         </div>
                         <div class="form-group">
-                            <label for="">Upload Photo :</label>
-                            <div class="controls">
-                                <input type="file" name="image" class="form-control">
-                            </div>
+                            <label>Status:</label>
+                            <select name="status" class="form-control">
+                                <option value="1" {{ old('status', $tourPackage->status) == 1 ? 'selected' : '' }}>
+                                    Active
+                                </option>
+                                <option value="0" {{ old('status', $tourPackage->status) == 0 ? 'selected' : '' }}>
+                                    Inactive
+                                </option>
+                            </select>
                         </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <div class="form-group">
+                            <label>Upload Photo :</label>
+                            <input type="file" name="image" class="form-control">
+
+                            @if ($tourPackage->image)
+                                <img src="{{ asset('uploads/tour/' . $tourPackage->image) }}" width="120"
+                                    class="mt-2">
+                            @endif
+                        </div>
+                        <button type="submit" class="btn btn-success">UPDATE</button>
                     </form>
                 </div>
             </div>
@@ -143,34 +156,28 @@
 @endsection
 
 @section('scripts')
-    <!-- ============================================================== -->
-    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="{{ url('') }}/assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ url('') }}/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="{{ url('') }}/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- apps -->
-    <script src="../../dist/js/app.min.js"></script>
-    <script src="../../dist/js/app.init.dark.js"></script>
-    <script src="../../dist/js/app-style-switcher.js"></script>
+    <script src="{{ url('') }}/dist/js/app.min.js"></script>
+    <script src="{{ url('') }}/dist/js/app.init.dark.js"></script>
+    <script src="{{ url('') }}/dist/js/app-style-switcher.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="{{ url('') }}/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="{{ url('') }}/assets/extra-libs/sparkline/sparkline.js"></script>
     <!--Wave Effects -->
-    <script src="../../dist/js/waves.js"></script>
+    <script src="{{ url('') }}/dist/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="../../dist/js/sidebarmenu.js"></script>
+    <script src="{{ url('') }}/dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="../../dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <!--chartis chart-->
-    <script src="../../assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="../../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <!--c3 charts -->
-    <script src="../../assets/extra-libs/c3/d3.min.js"></script>
-    <script src="../../assets/extra-libs/c3/c3.min.js"></script>
-    <!--chartjs -->
-    <script src="../../assets/libs/raphael/raphael.min.js"></script>
-    <script src="../../assets/libs/morris.js/morris.min.js"></script>
-
-    <script src="../../dist/js/pages/dashboards/dashboard1.js"></script>
+    <script src="{{ url('') }}/dist/js/custom.min.js"></script>
+    <script src="{{ url('') }}/assets/extra-libs/jqbootstrapvalidation/validation.js"></script>
+    <script>
+        ! function(window, document, $) {
+            "use strict";
+            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+        }(window, document, jQuery);
+    </script>
 @endsection
