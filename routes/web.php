@@ -1,23 +1,15 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ResortController;
 use App\Http\Controllers\TourCategoryController;
 use App\Http\Controllers\TourPackageController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.layouts.master');
 });
 
 Route::get('/dashboard', function () {
@@ -48,6 +40,7 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::view('/dashboard', 'backend.admin_dashboard');
     Route::resource('tour_category', TourCategoryController::class);
     Route::resource('tour_package', TourPackageController::class);
+    Route::resource('resorts', ResortController::class);
 });
 
 require __DIR__ . '/auth.php';

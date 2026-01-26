@@ -52,7 +52,7 @@
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
                         aria-expanded="false">
                         <i class="icon-Mailbox-Empty"></i>
-                        <span class="hide-menu">Bookings </span>
+                        <span class="hide-menu"> Uploads </span>
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item">
@@ -78,20 +78,20 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
                         aria-expanded="false">
-                        <i class="icon-Ticket"></i>
-                        <span class="hide-menu">Ticket </span>
+                        <i class="icon-Mailbox-Empty"></i>
+                        <span class="hide-menu"> Resorts </span>
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item">
-                            <a href="ticket-list.html" class="sidebar-link">
+                            <a href="{{route('resorts.index')}}" class="sidebar-link">
                                 <i class="mdi mdi-book-multiple"></i>
-                                <span class="hide-menu"> Ticket List </span>
+                                <span class="hide-menu"> Resorts List </span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a href="ticket-detail.html" class="sidebar-link">
                                 <i class="mdi mdi-book-plus"></i>
-                                <span class="hide-menu"> Ticket Detail </span>
+                                <span class="hide-menu"> Add Resort </span>
                             </a>
                         </li>
                     </ul>
