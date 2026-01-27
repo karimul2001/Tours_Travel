@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResortController;
 use App\Http\Controllers\TourCategoryController;
@@ -8,9 +9,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('frontend.pages.home');
-});
+Route::get('/', [FrontendController::class, 'home'])->name('home');
+Route::get('/destination', [FrontendController::class, 'destination'])->name('destination');
+Route::get('/tour', [FrontendController::class, 'tour'])->name('tour');
+// Route::get('/', function () {
+//     return view('frontend.pages.tour');
+// });
 
 Route::get('/dashboard', function () {
     return view('backend.dashboard');
