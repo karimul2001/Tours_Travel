@@ -74,7 +74,7 @@
 
 
     <!-- banner-section -->
-    <section class="banner-section" style="background-image: url(assets/images/banner/banner1.jpg);">
+    <section class="banner-section" style="background-image: url({{ url('') }}/frontend/assets/images/banner/banner2.jpg);">
         <div class="pattern-layer" style="background-image: url(assets/images/shape/ban);"></div>
         <div class="auto-container">
             <div class="content-box">
@@ -125,8 +125,8 @@
                         data-wow-duration="1500ms">
                         <div class="inner-box">
                             <figure class="image-box"><img
-                                    src="{{ url('') }}/frontend/assets/images/resource/feature-1.jpg"
-                                    alt=""></figure>
+                                    src="{{ url('') }}/frontend/assets/images/resource/download.jpg"
+                                    alt="NO Image"></figure>
                             <div class="lower-content">
                                 <div class="icon-box"><i class="icon-1"></i></div>
                                 <h4>2000+ Our Worldwide Guides</h4>
@@ -139,7 +139,7 @@
                         data-wow-duration="1500ms">
                         <div class="inner-box">
                             <figure class="image-box"><img
-                                    src="{{ url('') }}/frontend/assets/images/resource/feature-2.jpg"
+                                    src="{{ url('') }}/frontend/assets/images/resource/download1.jpg"
                                     alt=""></figure>
                             <div class="lower-content">
                                 <div class="icon-box"><i class="icon-2"></i></div>

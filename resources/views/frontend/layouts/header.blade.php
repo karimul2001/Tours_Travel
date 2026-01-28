@@ -40,7 +40,7 @@
                                     
                                 </li>
                                 
-                                <li><a href="{{ url('') }}/frontend/contact.html">Contact</a></li>
+                                <li><a href="{{route('contact')}}">Contact</a></li>
                             </ul>
                         </div>
                     </nav>

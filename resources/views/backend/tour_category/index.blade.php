@@ -70,7 +70,7 @@
                             @if (session('success'))
                                 <div id="success-alert"
                                     class="alert text-white text-center position-fixed top-50 start-50 translate-middle fs-3 fw-bold"
-                                    style="background-color: #107721; z-index: 1050; min-width: 900px; margin-left:80px;"
+                                    style="background-color: #107721; z-index: 1050; min-width: 800px; "
                                     role="alert">
                                     {{ session('success') }}
                                 </div>

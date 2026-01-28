@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TourPackage;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -13,6 +14,10 @@ class FrontendController extends Controller
         return view('frontend.pages.destination');
     }
     public function tour(){
-        return view('frontend.pages.tour');
+       $datas = TourPackage::all();
+        return view('frontend.pages.tour', compact('datas'));
+    }
+    public function contact(){
+        return view('frontend.pages.contact');
     }
 }

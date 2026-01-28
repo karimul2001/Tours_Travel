@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('/destination', [FrontendController::class, 'destination'])->name('destination');
 Route::get('/tour', [FrontendController::class, 'tour'])->name('tour');
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 // Route::get('/', function () {
 //     return view('frontend.pages.tour');
 // });
