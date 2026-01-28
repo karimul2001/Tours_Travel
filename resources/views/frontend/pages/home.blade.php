@@ -74,8 +74,8 @@
 
 
     <!-- banner-section -->
-    <section class="banner-section" style="background-image: url(assets/images/banner/banner-1.jpg);">
-        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-1.png);"></div>
+    <section class="banner-section" style="background-image: url(assets/images/banner/banner1.jpg);">
+        <div class="pattern-layer" style="background-image: url(assets/images/shape/ban);"></div>
         <div class="auto-container">
             <div class="content-box">
                 <h2>Explore <br />Your Travel</h2>

@@ -18,7 +18,7 @@
         <link href="../../assets/libs/morris.js/morris.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="../../dist/css/style.min.css" rel="stylesheet">
-        
+
     </head>
 @endsection
 
