@@ -94,7 +94,10 @@
                                             <th>{{$data->location}}</th>
                                             <th>{{$data->contact}}</th>
                                             <th>{{$data->status}}</th>
-                                            <th></th>
+                                            <th><a href="">Edit</a>
+                                            <button>Delete</button>
+                                            </th>
+                                            
                                             
                                         </tr>
                                         @endforeach

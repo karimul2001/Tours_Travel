@@ -13,7 +13,7 @@ class ResortController extends Controller
     public function index()
     {
        $datas = Resort::all();
-        return view ('backend.resorts.index', compact('data'));
+        return view ('backend.resorts.index', compact('datas'));
     }
 
     /**

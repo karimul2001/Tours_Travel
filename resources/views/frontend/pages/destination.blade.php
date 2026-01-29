@@ -66,7 +66,7 @@
 
 
         <!-- Page Title -->
-        <section class="page-title centred" style="background-image: url(assets/images/background/page-title.jpg);">
+        <section class="page-title centred" style="background-image: url({{url('')}}/frontend/assets/images/background/bg1.jpg);">
             <div class="auto-container">
                 <div class="content-box">
                     <h1>Destinations</h1>
@@ -89,9 +89,9 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 place-block">
                         <div class="place-block-one">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/place-1.jpg" alt=""></figure>
+                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/img1.jpg" alt=""></figure>
                                 <div class="text">
-                                    <h3><a href="{{url('')}}/frontend/destination-details.html">New York City</a></h3>
+                                    <h3><a href="{{url('')}}/frontend/destination-details.html">Sajek</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -99,9 +99,9 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 place-block">
                         <div class="place-block-one">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/place-5.jpg" alt=""></figure>
+                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/img2.jpg" alt=""></figure>
                                 <div class="text">
-                                    <h3><a href="{{url('')}}/frontend/destination-details.html">Mont Blanc</a></h3>
+                                    <h3><a href="{{url('')}}/frontend/destination-details.html">Sylet</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -109,9 +109,9 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 place-block">
                         <div class="place-block-one">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/place-2.jpg" alt=""></figure>
+                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/img3.jpg" alt=""></figure>
                                 <div class="text">
-                                    <h3><a href="{{url('')}}/frontend/destination-details.html">Norway Lake</a></h3>
+                                    <h3><a href="{{url('')}}/frontend/destination-details.html">Bandarban</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 place-block">
                         <div class="place-block-one">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/place-3.jpg" alt=""></figure>
+                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/img4.jpg" alt=""></figure>
                                 <div class="text">
                                     <h3><a href="{{url('')}}/frontend/destination-details.html">Affrican Park</a></h3>
                                 </div>
@@ -129,7 +129,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 place-block">
                         <div class="place-block-one">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/place-4.jpg" alt=""></figure>
+                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/img5.jpg" alt=""></figure>
                                 <div class="text">
                                     <h3><a href="{{url('')}}/frontend/destination-details.html">Vietnam</a></h3>
                                 </div>
@@ -139,7 +139,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 place-block">
                         <div class="place-block-one">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/place-9.jpg" alt=""></figure>
+                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/img6.jpg" alt=""></figure>
                                 <div class="text">
                                     <h3><a href="{{url('')}}/frontend/destination-details.html">Netherlands</a></h3>
                                 </div>
@@ -149,7 +149,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 place-block">
                         <div class="place-block-one">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/place-10.jpg" alt=""></figure>
+                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/img7.jpg" alt=""></figure>
                                 <div class="text">
                                     <h3><a href="{{url('')}}/frontend/destination-details.html">Greece</a></h3>
                                 </div>
@@ -159,7 +159,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 place-block">
                         <div class="place-block-one">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/place-11.jpg" alt=""></figure>
+                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/img1.jpg" alt=""></figure>
                                 <div class="text">
                                     <h3><a href="{{url('')}}/frontend/destination-details.html">Australia</a></h3>
                                 </div>
@@ -169,7 +169,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 place-block">
                         <div class="place-block-one">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/place-12.jpg" alt=""></figure>
+                                <figure class="image-box"><img src="{{url('')}}/frontend/assets/images/resource/img9.jpg" alt=""></figure>
                                 <div class="text">
                                     <h3><a href="{{url('')}}/frontend/destination-details.html">Costa Rica</a></h3>
                                 </div>
