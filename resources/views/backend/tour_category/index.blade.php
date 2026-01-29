@@ -21,9 +21,9 @@
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-                                                        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                                                        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-                                                        <![endif]-->
+                                                                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                                                                <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+                                                                <![endif]-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     </head>
@@ -70,8 +70,7 @@
                             @if (session('success'))
                                 <div id="success-alert"
                                     class="alert text-white text-center position-fixed top-50 start-50 translate-middle fs-3 fw-bold"
-                                    style="background-color: #107721; z-index: 1050; min-width: 800px; "
-                                    role="alert">
+                                    style="background-color: #107721; z-index: 1050; min-width: 1000px; " role="alert">
                                     {{ session('success') }}
                                 </div>
 
@@ -125,7 +124,7 @@
                                                         {{ $tour->status ? 'Active' : 'Inactive' }}
                                                     </button>
                                                 </td>
-                                                    {{-- @if ($tour->status)
+                                                {{-- @if ($tour->status)
                                                         <span
                                                             class="bg-green-500 text-white px-2 py-1 rounded text-sm">Active</span>
                                                     @else
