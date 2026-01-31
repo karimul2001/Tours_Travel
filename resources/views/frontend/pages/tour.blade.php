@@ -67,7 +67,8 @@
 
 
     <!-- Page Title -->
-    <section class="page-title style-two centred" style="background-image: url({{ url('') }}/frontend/assets/images/background/bg_image.jpg);">
+    <section class="page-title style-two centred"
+        style="background-image: url({{ url('') }}/frontend/assets/images/background/bg_image.jpg);">
         <div class="auto-container">
             <div class="content-box">
                 <h1>Tours Grid</h1>
@@ -140,8 +141,7 @@
 
                                                 <!-- Tour Image -->
                                                 <figure class="image-box">
-                                                    <img src="{{ asset( $data->image) }}"
-                                                        alt="{{ $data->title }}">
+                                                    <img src="{{ asset($data->image) }}" alt="{{ $data->title }}">
                                                 </figure>
 
                                                 <!-- Tour Details -->
@@ -161,7 +161,7 @@
                                                     <p>{{ $data->description }}</p>
 
                                                     <div class="btn-box">
-                                                        <a href="#">See Details</a>
+                                                        <a href="#">Booking Here</a>
                                                     </div>
                                                 </div>
 
@@ -174,152 +174,7 @@
                         </div>
 
 
-                        <div class="tour-list-content list-item">
-                            <div class="tour-block-two">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img src="assets/images/tour/tour-4.jpg" alt="">
-                                        <a href="tour-details.html"><i class="fas fa-link"></i></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <div class="rating"><span><i class="fas fa-star"></i>8.0 Superb</span></div>
-                                        <h3><a href="tour-details.html">Moscow Red City Land</a></h3>
-                                        <h4>$170.00<span> / Per person</span></h4>
-                                        <p>Lorem ipsum dolor amet consectetur adipiscing sed do eiusmod tempor incididunt.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="tour-details.html">See Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tour-block-two">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img src="assets/images/tour/tour-5.jpg" alt="">
-                                        <a href="tour-details.html"><i class="fas fa-link"></i></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <div class="rating"><span><i class="fas fa-star"></i>8.0 Superb</span></div>
-                                        <h3><a href="tour-details.html">Moscow Red City Land</a></h3>
-                                        <h4>$180.00<span> / Per person</span></h4>
-                                        <p>Lorem ipsum dolor amet consectetur adipiscing sed do eiusmod tempor incididunt.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="tour-details.html">See Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tour-block-two">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img src="assets/images/tour/tour-6.jpg" alt="">
-                                        <a href="tour-details.html"><i class="fas fa-link"></i></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <div class="rating"><span><i class="fas fa-star"></i>8.0 Superb</span></div>
-                                        <h3><a href="tour-details.html">Moscow Red City Land</a></h3>
-                                        <h4>$155.00<span> / Per person</span></h4>
-                                        <p>Lorem ipsum dolor amet consectetur adipiscing sed do eiusmod tempor incididunt.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="tour-details.html">See Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tour-block-two">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img src="assets/images/tour/tour-7.jpg" alt="">
-                                        <a href="tour-details.html"><i class="fas fa-link"></i></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <div class="rating"><span><i class="fas fa-star"></i>8.0 Superb</span></div>
-                                        <h3><a href="tour-details.html">Moscow Red City Land</a></h3>
-                                        <h4>$130.00<span> / Per person</span></h4>
-                                        <p>Lorem ipsum dolor amet consectetur adipiscing sed do eiusmod tempor incididunt.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="tour-details.html">See Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tour-block-two">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img src="assets/images/tour/tour-13.jpg" alt="">
-                                        <a href="tour-details.html"><i class="fas fa-link"></i></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <div class="rating"><span><i class="fas fa-star"></i>8.0 Superb</span></div>
-                                        <h3><a href="tour-details.html">Moscow Red City Land</a></h3>
-                                        <h4>$160.00<span> / Per person</span></h4>
-                                        <p>Lorem ipsum dolor amet consectetur adipiscing sed do eiusmod tempor incididunt.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="tour-details.html">See Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tour-block-two">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img src="assets/images/tour/tour-14.jpg" alt="">
-                                        <a href="tour-details.html"><i class="fas fa-link"></i></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <div class="rating"><span><i class="fas fa-star"></i>8.0 Superb</span></div>
-                                        <h3><a href="tour-details.html">Moscow Red City Land</a></h3>
-                                        <h4>$190.00<span> / Per person</span></h4>
-                                        <p>Lorem ipsum dolor amet consectetur adipiscing sed do eiusmod tempor incididunt.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="tour-details.html">See Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tour-block-two">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img src="assets/images/tour/tour-15.jpg" alt="">
-                                        <a href="tour-details.html"><i class="fas fa-link"></i></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <div class="rating"><span><i class="fas fa-star"></i>8.0 Superb</span></div>
-                                        <h3><a href="tour-details.html">Moscow Red City Land</a></h3>
-                                        <h4>$150.00<span> / Per person</span></h4>
-                                        <p>Lorem ipsum dolor amet consectetur adipiscing sed do eiusmod tempor incididunt.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="tour-details.html">See Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tour-block-two">
-                                <div class="inner-box">
-                                    <figure class="image-box">
-                                        <img src="assets/images/tour/tour-16.jpg" alt="">
-                                        <a href="tour-details.html"><i class="fas fa-link"></i></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <div class="rating"><span><i class="fas fa-star"></i>8.0 Superb</span></div>
-                                        <h3><a href="tour-details.html">Moscow Red City Land</a></h3>
-                                        <h4>$170.00<span> / Per person</span></h4>
-                                        <p>Lorem ipsum dolor amet consectetur adipiscing sed do eiusmod tempor incididunt.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="tour-details.html">See Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
 
                 </div>

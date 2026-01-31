@@ -59,8 +59,9 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <button id="addRow" class="btn btn-primary mb-2"><i class="fas fa-plus"></i>&nbsp; Add new
-                                row</button>
+                            <a href="{{ route('resorts.create') }}" class="btn btn-primary mb-2">
+                                <i class="fas fa-plus"></i>&nbsp; Add New Resort
+                            </a>
                             <div class="table-responsive">
                                 <table id="t_add_row" class="table table-striped table-bordered display" style="width:100%">
                                     <thead>
@@ -74,32 +75,44 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    {{-- 'name',
-        'slug',
-        'location',
-        'price_per_night',
-        'description',
-        'image',
-        'rating',
-        'contact_number',
-        'email',
-        'website',
-        'status', --}}
+
                                     <tfoot>
                                         @foreach ($datas as $data)
-                                        <tr>
-                                            <th>{{$data->id}}</th>
-                                            <th>{{$data->image}}</th>
-                                            <th>{{$data->name}}</th>
-                                            <th>{{$data->location}}</th>
-                                            <th>{{$data->contact}}</th>
-                                            <th>{{$data->status}}</th>
-                                            <th><a href="">Edit</a>
-                                            <button>Delete</button>
-                                            </th>
-                                            
-                                            
-                                        </tr>
+                                            <tr>
+                                                <td>{{ $data->id }}</td>
+                                                <td>
+                                                    <img src="{{ asset('uploads/resorts/' . ($data->image ?? 'nophoto.jpg')) }}"
+                                                        width="100" alt="No Image">
+                                                </td>
+                                                <td>{{ $data->name }}</td>
+                                                <td>{{ $data->location }}</td>
+                                                <td>{{ $data->contact }}</td>
+                                                <td>
+                                                    <button type="button"
+                                                        class="btn btn-sm {{ $data->status ? 'btn-success' : 'btn-danger' }}">
+                                                        {{ $data->status ? 'Active' : 'Inactive' }}
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <!-- Edit Button -->
+                                                    <a href="{{ route('resorts.edit', $data->id) }}"
+                                                        class="btn btn-sm btn-primary">
+                                                        <i class="fas fa-edit"></i> Edit
+                                                    </a>
+
+                                                    <!-- Delete Form -->
+                                                    <form action="{{ route('resorts.destroy', $data->id) }}" method="POST"
+                                                        onsubmit="return confirm('Are you sure you want to delete this resort?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-sm btn-danger">
+                                                            <i class="fas fa-trash"></i> Delete
+                                                        </button>
+                                                    </form>
+                                                </td>
+
+
+                                            </tr>
                                         @endforeach
                                     </tfoot>
                                 </table>

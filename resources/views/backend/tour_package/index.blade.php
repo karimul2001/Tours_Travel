@@ -116,7 +116,7 @@
                                                         {{ $data->status ? 'Active' : 'Inactive' }}
                                                     </button>
                                                 </td>
-                                                <td>{{ $data->created_at }}</td>
+                                                <td>{{ $data->created_at->format('d-m-y') }}</td>
                                                 <td class="text-center">
                                                     <a href="{{ route('tour_package.edit', $data->id) }}"
                                                         class="btn btn-info">

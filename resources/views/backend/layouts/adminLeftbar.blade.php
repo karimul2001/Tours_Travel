@@ -83,13 +83,13 @@
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item">
-                            <a href="{{route('resorts.index')}}" class="sidebar-link">
+                            <a href="{{ route('resorts.index') }}" class="sidebar-link">
                                 <i class="mdi mdi-book-multiple"></i>
                                 <span class="hide-menu"> Resorts List </span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="ticket-detail.html" class="sidebar-link">
+                            <a href="{{ route('resorts.create') }}" class="sidebar-link">
                                 <i class="mdi mdi-book-plus"></i>
                                 <span class="hide-menu"> Add Resort </span>
                             </a>

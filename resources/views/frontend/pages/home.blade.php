@@ -74,7 +74,8 @@
 
 
     <!-- banner-section -->
-    <section class="banner-section" style="background-image: url({{ url('') }}/frontend/assets/images/banner/banner2.jpg);">
+    <section class="banner-section"
+        style="background-image: url({{ url('') }}/frontend/assets/images/banner/banner2.jpg);">
         <div class="pattern-layer" style="background-image: url(assets/images/shape/ban);"></div>
         <div class="auto-container">
             <div class="content-box">
@@ -139,8 +140,8 @@
                         data-wow-duration="1500ms">
                         <div class="inner-box">
                             <figure class="image-box"><img
-                                    src="{{ url('') }}/frontend/assets/images/resource/download1.jpg"
-                                    alt=""></figure>
+                                    src="{{ url('') }}/frontend/assets/images/resource/img2.jpg" alt="">
+                            </figure>
                             <div class="lower-content">
                                 <div class="icon-box"><i class="icon-2"></i></div>
                                 <h4>100% Trusted Tour Agency</h4>
@@ -153,8 +154,8 @@
                         data-wow-duration="1500ms">
                         <div class="inner-box">
                             <figure class="image-box"><img
-                                    src="{{ url('') }}/frontend/assets/images/resource/feature-3.jpg"
-                                    alt=""></figure>
+                                    src="{{ url('') }}/frontend/assets/images/resource/img3.jpg" alt="">
+                            </figure>
                             <div class="lower-content">
                                 <div class="icon-box"><i class="icon-3"></i></div>
                                 <h4>12+ Years of Travel Experience</h4>
@@ -167,8 +168,8 @@
                         data-wow-duration="1500ms">
                         <div class="inner-box">
                             <figure class="image-box"><img
-                                    src="{{ url('') }}/frontend/assets/images/resource/feature-4.jpg"
-                                    alt=""></figure>
+                                    src="{{ url('') }}/frontend/assets/images/resource/img4.jpg" alt="">
+                            </figure>
                             <div class="lower-content">
                                 <div class="icon-box"><i class="icon-4"></i></div>
                                 <h4>98% of Our Travelers are Happy</h4>
@@ -184,7 +185,8 @@
 
     <!-- about-section -->
     <section class="about-section">
-        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
+        <div class="pattern-layer"
+            style="background-image: url({{ url('') }}/frontend/assets/images/shape/logo.jpg);"></div>
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-6 col-md-12 col-sm-12 image-column">
@@ -197,8 +199,7 @@
                                 </div>
                             </div>
                             <figure class="image image-1">
-                                <img src="{{ url('') }}/frontend/assets/images/resource/about-1.jpg"
-                                    alt="">
+                                <img src="{{ url('') }}/frontend/assets/images/resource/logo.webp" alt="">
                                 <div class="shape-3" style="background-image: url(assets/images/shape/shape-3.png);">
                                 </div>
                             </figure>
