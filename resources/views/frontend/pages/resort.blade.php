@@ -71,7 +71,7 @@
         style="background-image: url({{ url('') }}/frontend/assets/images/background/bg_image.jpg);">
         <div class="auto-container">
             <div class="content-box">
-                <h1>Tours Grid</h1>
+                <h1>Resort Grid</h1>
                 <p>Discover your next great adventure</p>
             </div>
             <div class="form-inner">
@@ -134,42 +134,7 @@
                         <div class="">
                             <div class="row clearfix">
 
-                                @foreach ($datas as $data)
-                                    <div class="col-lg-6 col-md-6 col-sm-12 tour-block">
-                                        <div class="tour-block-one">
-                                            <div class="inner-box">
-
-                                                <!-- Tour Image -->
-                                                <figure class="image-box">
-                                                    <img src="{{ asset($data->image) }}" alt="{{ $data->title }}">
-                                                </figure>
-
-                                                <!-- Tour Details -->
-                                                <div class="lower-content">
-                                                    <h3>{{ $data->title }}</h3>
-
-                                                    <h4>
-                                                        ৳ {{ $data->price }} <span>/ Per person</span>
-                                                    </h4>
-
-                                                    <ul class="info clearfix">
-                                                        <li>
-                                                            <i class="far fa-map"></i> {{ $data->location }}
-                                                        </li>
-                                                    </ul>
-
-                                                    <p>{{ $data->description }}</p>
-
-                                                    <div class="btn-box">
-                                                        <a href="">Booking Here</a>
-                                                        {{-- {{ route('tour.booking.create', $tour->id) }} --}}
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
+                                
 
                             </div>
                         </div>

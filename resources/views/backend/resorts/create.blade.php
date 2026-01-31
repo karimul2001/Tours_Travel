@@ -10,14 +10,14 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- Favicon icon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ url('') }}/frontend/assets/images/favicon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
         <title>AdminBite admin Template - The Ultimate Multipurpose admin template</title>
         <!-- Custom CSS -->
-        <link href="{{ url('') }}/frontend/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-        <link href="{{ url('') }}/frontend/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-        <link href="{{ url('') }}/frontend/assets/libs/morris.js/morris.css" rel="stylesheet">
+        <link href="../../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+        <link href="../../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+        <link href="../../assets/libs/morris.js/morris.css" rel="stylesheet">
         <!-- Custom CSS -->
-        <link href="{{ url('') }}/frontend/dist/css/style.min.css" rel="stylesheet">
+        <link href="../../dist/css/style.min.css" rel="stylesheet">
 
     </head>
 @endsection
@@ -126,7 +126,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="">Contcat Number :</label>
+                            <label for="">Contact Number :</label>
                             <div class="controls">
                                 <input type="text" name="contact_number" value="{{ old('contact_number') }}"
                                     class="form-control">

@@ -26,7 +26,12 @@ class TourPackage extends Model
     ];
 
     public function tourCategory()
-{
-    return $this->belongsTo(TourCategory::class);
-}
+    {
+        return $this->belongsTo(TourCategory::class);
+    }
+
+    public function bookings()
+    {
+        return $this->hasMany(TourBooking::class);
+    }
 }

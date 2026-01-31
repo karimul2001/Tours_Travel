@@ -86,7 +86,7 @@
                                                 </td>
                                                 <td>{{ $data->name }}</td>
                                                 <td>{{ $data->location }}</td>
-                                                <td>{{ $data->contact }}</td>
+                                                <td>{{ $data->contact_number }}</td>
                                                 <td>
                                                     <button type="button"
                                                         class="btn btn-sm {{ $data->status ? 'btn-success' : 'btn-danger' }}">

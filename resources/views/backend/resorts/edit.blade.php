@@ -1,23 +1,25 @@
 @extends('backend.layouts.master')
 
+<base href="/public/frontend">
 @section('head')
 
     <head>
-        <meta charset="utf-8">
+         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- Favicon icon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ url('') }}/frontend/assets/images/favicon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
         <title>AdminBite admin Template - The Ultimate Multipurpose admin template</title>
         <!-- Custom CSS -->
-        <link href="{{ url('') }}/frontend/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-        <link href="{{ url('') }}/frontend/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-        <link href="{{ url('') }}/frontend/assets/libs/morris.js/morris.css" rel="stylesheet">
+        <link href="../../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+        <link href="../../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+        <link href="../../assets/libs/morris.js/morris.css" rel="stylesheet">
         <!-- Custom CSS -->
-        <link href="{{ url('') }}/frontend/dist/css/style.min.css" rel="stylesheet">
+        <link href="../../dist/css/style.min.css" rel="stylesheet">
+
 
 
     </head>
@@ -171,7 +173,7 @@
 
 
                         <button type="submit" class="btn btn-success w-100 py-2">
-                            <span class="fw-bold text-primary" style="font-size: 20px;">
+                            <span class="fw-bold text-primary" style="font-size: 15px;">
                                 UPDATE
                             </span>
                         </button>
@@ -189,34 +191,33 @@
 
 @section('scripts')
     <!-- ============================================================== -->
-    <script src="{{ url('') }}/frontend/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{ url('') }}/frontend/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="{{ url('') }}/frontend/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- apps -->
-    <script src="{{ url('') }}/frontend/dist/js/app.min.js"></script>
-    <script src="{{ url('') }}/frontend/dist/js/app.init.dark.js"></script>
-    <script src="{{ url('') }}/frontend/dist/js/app-style-switcher.js"></script>
+    <script src="../../dist/js/app.min.js"></script>
+    <script src="../../dist/js/app.init.dark.js"></script>
+    <script src="../../dist/js/app-style-switcher.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="{{ url('') }}/frontend/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="{{ url('') }}/frontend/assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
     <!--Wave Effects -->
-    <script src="{{ url('') }}/frontend/dist/js/waves.js"></script>
+    <script src="../../dist/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="{{ url('') }}/frontend/dist/js/sidebarmenu.js"></script>
+    <script src="../../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="{{ url('') }}/frontend/dist/js/custom.min.js"></script>
+    <script src="../../dist/js/custom.min.js"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
-    <script src="{{ url('') }}/frontend/assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="{{ url('') }}/frontend/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js">
-    </script>
+    <script src="../../assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="../../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <!--c3 charts -->
-    <script src="{{ url('') }}/frontend/assets/extra-libs/c3/d3.min.js"></script>
-    <script src="{{ url('') }}/frontend/assets/extra-libs/c3/c3.min.js"></script>
+    <script src="../../assets/extra-libs/c3/d3.min.js"></script>
+    <script src="../../assets/extra-libs/c3/c3.min.js"></script>
     <!--chartjs -->
-    <script src="{{ url('') }}/frontend/assets/libs/raphael/raphael.min.js"></script>
-    <script src="{{ url('') }}/frontend/assets/libs/morris.js/morris.min.js"></script>
+    <script src="../../assets/libs/raphael/raphael.min.js"></script>
+    <script src="../../assets/libs/morris.js/morris.min.js"></script>
 
-    <script src="{{ url('') }}/frontend/dist/js/pages/dashboards/dashboard1.js"></script>
+    <script src="../../dist/js/pages/dashboards/dashboard1.js"></script>
 @endsection

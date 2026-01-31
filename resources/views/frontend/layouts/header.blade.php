@@ -27,16 +27,10 @@
                                 <li class="dropdown"><a href="{{route('tour')}}">Tours</a>
                                     
                                 </li>
-                                <li class="dropdown"><a href="{{ url('') }}/frontend/index.html">Pages</a>
-                                    <ul>
-                                        <li><a href="{{ url('') }}/frontend/about.html">About Us</a>
-                                        </li>
-                                        <li><a href="{{ url('') }}/frontend/booking-1.html">Booking
-                                                Process</a></li>
-                                        
-                                    </ul>
+                                <li class="dropdown"><a href="{{ route('resort') }}">Resorts</a>
+                                    
                                 </li>
-                                <li class="dropdown"><a href="{{ url('') }}/frontend/index.html">Elements</a>
+                                <li class="dropdown"><a href="{{ url('') }}/frontend/index.html">About Us</a>
                                     
                                 </li>
                                 

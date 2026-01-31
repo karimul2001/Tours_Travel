@@ -20,4 +20,7 @@ class FrontendController extends Controller
     public function contact(){
         return view('frontend.pages.contact');
     }
+    public function resort(){
+        return view('frontend.pages.resort');
+    }
 }
